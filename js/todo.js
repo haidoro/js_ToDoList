@@ -7,7 +7,10 @@ function addItem() {
   todoItem.value = "";
   for (i in todoItems){
     let li = document.createElement('li');
-    li.innerHTML =  `<span>${ todoItems[i] }</span>`;
+    li.innerHTML = `<input type="checkbox" onchange="myChange(event)">` + `<span>${ todoItems[i] }</span>`;
     todoList.appendChild(li);
   }
+}
+function myChange(event){
+  event.target.classList.toggle('done');
 }
